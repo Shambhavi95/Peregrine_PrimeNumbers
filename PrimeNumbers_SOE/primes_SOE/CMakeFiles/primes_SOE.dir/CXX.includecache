@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Peregrine_PrimeNumbers/PrimeNumbers_SOE/Primes_SOE/main.cpp
+iostream
+-
+math.h
+-
+vector
+-
+chrono
+-
+omp.h
+-
+

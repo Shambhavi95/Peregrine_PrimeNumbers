@@ -1,0 +1,3 @@
+/mnt/c/Peregrine_PrimeNumbers/PrimeNumbers_SOE/Primes_SOE/CMakeFiles/rebuild_cache.dir
+/mnt/c/Peregrine_PrimeNumbers/PrimeNumbers_SOE/Primes_SOE/CMakeFiles/primes_SOE.dir
+/mnt/c/Peregrine_PrimeNumbers/PrimeNumbers_SOE/Primes_SOE/CMakeFiles/edit_cache.dir

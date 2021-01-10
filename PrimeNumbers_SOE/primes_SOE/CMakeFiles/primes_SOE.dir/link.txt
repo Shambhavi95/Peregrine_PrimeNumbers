@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/primes_SOE.dir/main.cpp.o  -o primes_SOE 
