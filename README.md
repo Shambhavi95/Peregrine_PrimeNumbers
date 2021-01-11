@@ -23,4 +23,4 @@ Follow the below mentioned steps to run the project –
           a.	Download the file and provide appropriate project path to the .cpp file in Ubuntu Linux.
           b.	Type in the following commands – 
               make
-              ./primes_mul
+              ./main
