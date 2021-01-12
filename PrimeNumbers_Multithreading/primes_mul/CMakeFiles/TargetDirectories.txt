@@ -1,3 +1,0 @@
-/mnt/c/Peregrine_PrimeNumbers/PrimeNumbers_Multithreading/primes_mul/CMakeFiles/rebuild_cache.dir
-/mnt/c/Peregrine_PrimeNumbers/PrimeNumbers_Multithreading/primes_mul/CMakeFiles/main.dir
-/mnt/c/Peregrine_PrimeNumbers/PrimeNumbers_Multithreading/primes_mul/CMakeFiles/edit_cache.dir
