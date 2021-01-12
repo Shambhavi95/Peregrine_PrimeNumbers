@@ -47,23 +47,23 @@ void calculatePrimeNumbers(unsigned int firstNumber, unsigned int lastNumber) {
 void primeNumbersWithThreads(unsigned int firstNumber, 
 						unsigned int lastNumber, unsigned int totalThreads) 
 {
-	std::vector<std::thread> threadVect;
-	
 	unsigned int threadSpread = lastNumber / totalThreads;
 	unsigned int newLastNumber = firstNumber + threadSpread - 1;
 	
-	for(unsigned int i = 0; i<totalThreads; i++) {	
-			//launch thread using function pointer as callable
-			thread threadVect(calculatePrimeNumbers, firstNumber, newLastNumber);
-		
+			//create different thread object 
+			thread thread1(calculatePrimeNumbers, firstNumber, newLastNumber); //thread object
 			firstNumber = firstNumber + threadSpread;
 			newLastNumber = newLastNumber + threadSpread;
-		}
+			
+			thread thread2(calculatePrimeNumbers, firstNumber, newLastNumber); //thread object
+			firstNumber = firstNumber + threadSpread;
+			newLastNumber = newLastNumber + threadSpread;
+			
+			thread thread3(calculatePrimeNumbers, firstNumber, newLastNumber); //thread object
 	
-	//Wait for other threads to finish
-	for(auto& thread : threadVect) {
-			thread.join();
-		}
+	thread1.join();
+	thread2.join();
+	thread3.join();
 }
 
 //*************************************************************************
@@ -102,15 +102,17 @@ int main() {
 	
 	if(N==1) cout << "1 is neither prime nor composite"; 
 	
-	vector<unsigned int> vectPrime(N,1);
+	//vector<unsigned int> vectPrime(N,1);
 	
 	auto start = high_resolution_clock::now();
 		primeNumbersWithThreads(1, N, 3);
 	auto stop = high_resolution_clock::now();
+
+	cout << "2 ";	//hardcoded value of 2
 	
-	for(int k=0; k<vectPrime.size(); k++) {
-		if(vectPrime[k] == 1)	cout << k << " ";
-	}
+	for(auto i: vectPrime) {
+		cout << i << " ";
+	  }
 	
 	auto duration = duration_cast<microseconds>(stop - start);
 	cout << "\nTotal Time taken = " << duration.count() 
