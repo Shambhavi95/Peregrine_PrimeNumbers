@@ -12,11 +12,13 @@
 #include <vector>
 #include <chrono>
 #include <thread>
+#include <mutex>
 
 using namespace std;
 using namespace std::chrono;
 
 vector<unsigned int> vectPrime;		//global vector
+mutex mutexLock;
 
 //*************************************************************************
 // Function: calculatePrimeNumbers()
@@ -28,7 +30,9 @@ void calculatePrimeNumbers(unsigned int firstNumber, unsigned int lastNumber) {
 				for(unsigned int j=2; j<i; j++) {
 					if((i%j) == 0) { break; }
 					else if((j+1)==i) {
+						mutexLock.lock();
 						vectPrime.push_back(i);
+						mutexLock.unlock();
 					}
 				}
 			}
@@ -57,7 +61,7 @@ void primeNumbersWithThreads(unsigned int firstNumber,
 		}
 	
 	//Wait for other threads to finish
-	for(auto &thread : threadVect) {
+	for(auto& thread : threadVect) {
 			thread.join();
 		}
 }

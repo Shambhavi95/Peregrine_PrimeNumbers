@@ -1,7 +1,7 @@
 //*************************************************************************
 // Code: Generator of Prime Numbers using algorithm "Seive of Eratosthenes"
 // Author: Shambhavi K.
-// Date: 03.01.2021 (Last updated: 07.01.2021)      
+// Date: 03.01.2021 (Last updated: 10.01.2021)      
 //*************************************************************************
 
 #include <iostream>
@@ -64,7 +64,8 @@ int main() {
 	N = validInput();
 	
 	//precaution
-	if(N == 1) cout << "1 is neither prime nor composite"; 
+	if(N==1) cout << "1 is neither prime nor composite"; 
+	if(N<=0) cout << "Please enter a positive integer";
 	
 	vector<int> vectorPrimes(N,1);
 	vectorPrimes[0] = 0; vectorPrimes[1] = 0;
